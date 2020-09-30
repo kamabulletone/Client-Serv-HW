@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    
+
+    <p>Львов Т.Р.</p>
+    <canvas id="triag" width="600px" height="550px">
+        
+    </canvas>
+
+    <script>
+        let canvas = document.getElementById("triag");
+        let context = canvas.getContext('2d');
+        context.strokeStyle = '#FF0000'; // Цвет обводки
+         context.lineWidth = 3; // Ширина линии
+        context.fillStyle = '#00FF00'; // Цвет заливки
+
+        context.strokeRect(0, 10, 150, 200);
+        context.fillRect(15,26,120,170);
+        // context.fillRect(155, 0, 150, 200);
+        // context.clearRect(200, 25, 45, 100);
+        context.beginPath();
+        context.moveTo(160, 210);
+        context.lineTo(240,10);
+        context.lineTo(320,210);
+        context.closePath();
+        context.stroke();
+
+        context.beginPath();
+        context.moveTo(180, 200);
+        context.lineTo(240,30);
+        context.lineTo(300,200);
+        context.closePath();
+        context.fill();
+
+
+        context.beginPath();
+            context.arc(430,110,105,0, Math.PI * 2, false);
+            
+            context.stroke();
+
+
+        // context.fillStyle ="#76297d"
+        for (let i = 0; i < 6; i++) {
+            context.fillStyle ='rgb(' + Math.round(Math.random()*255) + ',' + Math.round(Math.random() * 255) + ',' + Math.round(Math.random()*255) +')'
+            context.beginPath();
+            context.arc(430,110,100,Math.PI/3 * i, Math.PI/3 * (i+1), false );
+            context.lineTo(430,110);
+            context.fill();
+        }
+
+        
+        
+    </script>
+
+    
+    
+</body>
+</html>
