@@ -12,3 +12,13 @@ h3 {
     text-align:right;
 
 }
+
+button {
+    background-color: pink;
+    border: 1px sold gray;
+    border-radius: 10px;
+}
+
+.div1 {
+background-color: green;
+}
