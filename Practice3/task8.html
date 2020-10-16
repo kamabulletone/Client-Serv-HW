@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body, html {
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+    }
+    .container {
+        display: flex;
+        width: 100%;
+        height: 100%;
+        justify-content: center;
+        align-items: center;
+
+    }
+    .square {
+        display: flex;
+        position: relative;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        width: 20%;
+        border: 1px solid red;
+
+    }
+    .content {
+        /* position: absolute;
+        top: 0;
+        left: 0; */
+        
+        width: 100%;
+        height: 100%;
+    }
+    .square::after {
+        content: '';
+        display: block;
+        padding-top: 100%;
+    }
+
+</style>
+<body>
+<div class="container">
+    <div class="square">
+        <div class="content">
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
+        </div>
+        
+    </div>
+</div>
+    
+    
+</body>
+</html>
