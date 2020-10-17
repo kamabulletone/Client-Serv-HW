@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .val {
+color: red;
+font-size: 14px;
+}
+
+.val1 {
+color: red;
+font-size: 14px;
+}
+</style>
+<body>
+
+    <form>
+        <p>Заполните форму (все поля обязательны)</p>
+        <p><span class="val">*</span>Имя пользователя <input class="line" name="name" required></p>
+        <p><span class="val1">*</span>Сколько вам лет? <input class="num" type="number" min="0" max="120" name="number" required></p>
+        <p><span class="val">*</span>Вы учитесь или работаете? <input class="line" type="name" required></p>
+        <p><span class="val1">*</span>Сколько у вас свободного времени? <input class="num" type="number" required></p>
+        <p>Что вы обычно делаете в свободное временя? <input type="text"></p>
+        <p><input type="submit" value="Отправить"></p>
+        </form>
+        
+        
+        
+        <script type="text/javascript">
+        let s = "\u2714";
+        
+        for (var i = 0; i < 2; i++) {
+        let inp = document.getElementsByClassName("line")[i];
+        let sp = document.getElementsByClassName("val")[i];
+        
+        inp.addEventListener("input", function (event) {
+        if (inp.valid || event.target.value == "") {
+        sp.textContent = "*";
+        sp.style.cssText = "color: red";
+        } else {
+        
+        sp.textContent = s;
+        sp.style.cssText = "color: green";
+        }
+        });
+        }
+        
+        
+        let inp = document.getElementsByClassName("num")[0];
+        let sp = document.getElementsByClassName("val1")[0];
+        
+        inp.addEventListener("input", function (event) {
+        if (inp.valid || event.target.value == "" || event.target.value > 120 || event.target.value < 0) {
+        sp.textContent = "*";
+        sp.style.cssText = "color: red";
+        } else {
+        sp.textContent = s ;
+        sp.style.cssText = "color: green";
+        }
+        });
+        
+        let inp1 = document.getElementsByClassName("num")[1];
+        let sp1 = document.getElementsByClassName("val1")[1];
+        
+        inp1.addEventListener("input", function (event) {
+        if (inp1.valid || event.target.value == "") {
+        sp1.textContent = "*";
+        sp1.style.cssText = "color: red";
+        } else {
+        sp1.textContent= s;
+        sp1.style.cssText = "color: green";
+        }
+        });
+        
+        
+        </script>
+    
+</body>
+</html>
