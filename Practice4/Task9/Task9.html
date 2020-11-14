@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Task9</title>
+</head>
+<style type="text/css">
+	.button {
+		width: 200px;
+		height: 50px;
+		border: solid 1px black;
+		border-radius: 30px;		
+		display: flex;
+		justify-content: center;
+		align-items: center;
+
+	}
+	.button.btn1 {
+		box-shadow: inset 0px 0px 50px red;
+	}
+	.button.btn1:hover {
+		box-shadow: inset 0px 0px 50px #cc0000;
+	}
+	.button.btn2 {
+		background: linear-gradient(to right, #ffffff, purple);
+		transition: 1s;
+		color: #FFFFFF;
+	}
+	.button.btn2:hover {
+		background: linear-gradient(to right, #e60000, #660066);
+	}
+	.button.btn3 {
+		color: #FFFFFF;
+		background: linear-gradient(90deg, rgb(0 0 0) 0%, rgb(255 255 255) 23%, rgb(255 0 0) 61%, rgb(255 0 245) 80%);
+		transition: 2s;
+	}
+	.button.btn3:hover {
+		background: linear-gradient(65deg, rgb(0 0 0) 0%, rgb(255 255 255) 23%, rgb(255 0 0) 61%, rgb(255 0 245) 80%);
+	}
+</style>
+<body>
+
+
+
+<div class="button btn1">
+	Button1
+</div><br>
+<div class="button btn2">
+	Button2
+</div><br>
+<div class="button btn3">
+	Button3
+</div>
+
+<script type="text/javascript">
+	let btn1 = document.getElementsByClassName("button")[0];
+	let btn2 = document.getElementsByClassName("button")[1];
+	let btn3 = document.getElementsByClassName("button")[2];
+	let angle = 80;
+	btn1.addEventListener('click', function() {
+		btn1.style.cssText = `transform: rotateX(${angle}deg)`;
+		if(angle != 0) {		
+			angle = 0
+		}
+		else {
+			angle = 80;
+		}
+		
+	});
+	btn2.addEventListener('click', function() {
+		btn2.style.cssText = `transform: rotateX(${angle}deg)`;
+		if(angle != 0) {		
+			angle = 0
+		}
+		else {
+			angle = 80;
+		}
+		
+	});
+	btn3.addEventListener('click', function() {
+		btn3.style.cssText = `transform: rotateX(${angle}deg)`;
+		if(angle != 0) {		
+			angle = 0
+		}
+		else {
+			angle = 80;
+		}
+		
+	});
+</script>
+
+</body>
+</html>
