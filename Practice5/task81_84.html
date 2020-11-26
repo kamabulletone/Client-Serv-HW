@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- <script>
+    var obj = {a:1, b:2, c:3};
+    alert(obj["c"])
+    alert(obj.c)
+    </script>
+    <script>
+        obj = {
+            Коля: "1000",
+            Вася: "500",
+            Петя: "200"
+        };
+        alert(obj.Коля)
+        alert(obj.Вася)
+        alert(obj.Петя)
+    </script> -->
+    <script>
+        let week = {
+            1 : "Monday",
+            2 : "Tuesday",
+            3 : "Wednesday",
+            4 : "Thursday",
+            5 : "Friday",
+            6 : "Saturday",
+            7 : "Sunday"
+        }
+        
+        let date = new Date();
+        for (let key in week) {
+            if (key == date.getDay()%7) {
+                alert(week[key]);
+                break;
+            }
+        }
+
+    </script>
+
+    <script>
+        let day = 3;
+        alert(week[day])
+    </script>
+    
+</body>
+</html>

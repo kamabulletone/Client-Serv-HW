@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let test = [true, false];
+        alert("Короткая запись 11.1")
+        test.forEach(el => el === true ? alert("Верно") : alert("Неверно"));
+
+        alert("Длинная запись 11.1")
+        for (let i in test) {
+            if (test[i] === true) alert("Верно")
+            else alert("Неверно")
+        }
+
+        alert("Короткая запись 11.2")
+        test.forEach(el => el !== true ? alert("Верно") : alert("Неверно"));
+
+        alert("Длинная запись 11.2")
+        for(let i in test) {
+            if (test[i] !== true) alert("Верно")
+            else alert("Неверно")
+        }
+    </script>
+</body>
+</html>

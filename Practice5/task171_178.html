@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let arr = [2,5,9,15,0,4];
+        for (i in arr) {
+            if (arr[i] > 3 && arr[i] < 10) console.log(arr[i]);
+        }
+        console.log("------------------------------------");
+
+        arr = [2,-5,9,-15,0,-4];
+        let sum = 0;
+        for (i in arr) {
+            if (arr[i] > 0) sum+=arr[i];
+        }
+        console.log(sum)
+        console.log("------------------------------------");
+
+        arr = [1,2,5,9,4,13,4,10];
+        for (i in arr) {
+            if (arr[i] === 4) {
+                console.log("Есть");
+                break;
+            }
+        }
+        console.log("------------------------------------");
+
+        arr = [10,20,30,50,235,3000];
+        let temp;
+        for (i in arr) {
+            if (arr[i].toString()[0] == 1 || arr[i].toString()[0] == 2 || arr[i].toString()[0] == 5) console.log(arr[i]);
+        }
+
+        console.log("------------------------------------");
+
+        arr = [1,2,3,4,5,6,7,8,9];
+
+        let str;
+        for (i in arr) {
+            str += "-" + arr[i];
+        }
+        console.log(str + "-");
+
+        console.log("------------------------------------");
+
+        arr = ["Понедельник","Вторник","Среда","Четверг","Пятница","Суббота","Воскресенье"];
+
+        for (i in arr ) {
+            if (arr[i] === "Суббота" || arr[i] === "Воскресенье") {
+                console.log(arr[i].bold());
+            }
+            else console.log(arr[i]);
+        }
+        console.log("------------------------------------");
+
+        day = new Date().getDay();
+
+        let week = {
+            1 : "Понедельник",
+            2 : "Вторник",
+            3 : "Среда",
+            4 : "Четверг",
+            5 : "Пятница",
+            6 : "Суббота",
+            7 : "Воскресенье"
+        }
+        
+        for (i in week ) {
+            if (week[i] === "Суббота" || week[i] === "Воскресенье") {
+                console.log(week[i].bold());
+            }
+            else if (i == day) console.log(week[i].italics())
+            else console.log(arr[i]);
+        }
+        console.log("------------------------------------");
+
+        let num = 0;
+        let n = 1000;
+        while (n >= 50) {
+            n /= 2;
+            num++;
+        }
+        console.log(n);
+        console.log(num);
+        
+
+        console.log("------------------------------------");
+
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let hour = 60;
+        let min = 60;
+        alert("seconds in hours= " + (min * hour));
+        alert("seconds in a day= " + (min*hour*24));
+        alert("seconds in a month= " + (min*hour*24*30))
+    </script>
+    <script>
+        let date = new Date();
+        let hours = date.getHours();
+        let mins = date.getMinutes();
+        let secs = date.getSeconds();
+        alert(hours + " : " + mins + " : " + secs )
+    </script>
+</body>
+</html>
