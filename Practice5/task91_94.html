@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let arr = [ [1, 2, 3], [4, 5, 6], [7,8,9] ];
+        arr.forEach(a => a.indexOf(4) !== -1 ?
+                        alert(a.filter(b => b ===4)) : a)
+
+    </script>
+
+    <script>
+        let obj = {
+            js : ['jQuery', "Angular"],
+            php : "hello",
+            css : "world"
+        }
+
+        alert(obj.js[0])
+    </script>
+
+    <script>
+        let weeks = {
+            ru : ["Понедельник","Вторник","Среда","Четверг","Пятница","Суббота","Воскресенье"],
+            en : ["Monday",
+            "Tuesday",
+            "Wednesday",
+            "Thursday",
+            "Friday",
+            "Saturday",
+            "Sunday"]
+        }
+        alert(weeks.ru[0])
+        alert(weeks.en[2])
+    </script>
+
+<script>
+    let lang = "ru";
+    let day = 3;
+    alert(weeks[lang][day-1])
+</script>
+
+</body>
+</html>
