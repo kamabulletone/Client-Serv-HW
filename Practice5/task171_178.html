@@ -40,7 +40,7 @@
 
         arr = [1,2,3,4,5,6,7,8,9];
 
-        let str;
+        let str = "";
         for (i in arr) {
             str += "-" + arr[i];
         }
@@ -71,11 +71,11 @@
         }
         
         for (i in week ) {
-            if (week[i] === "Суббота" || week[i] === "Воскресенье") {
-                console.log(week[i].bold());
+            if (i == day) console.log(week[i].italics())
+            else {
+                if (week[i] === "Суббота" || week[i] === "Воскресенье") console.log(week[i].bold());
+                else console.log(week[i]);
             }
-            else if (i == day) console.log(week[i].italics())
-            else console.log(arr[i]);
         }
         console.log("------------------------------------");
 
