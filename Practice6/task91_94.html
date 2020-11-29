@@ -24,14 +24,14 @@
     </script>
 
     <script>
-        alert("position = " + str.search("учу"));
+        alert("position = " + str.indexOf("учу"));
     </script>
     
     <script>
     let n = 5;
     let result;
     if (str.length > 5) {
-        result = str.substring(0,n);
+        result = str.substring(0,n) + "...";
     }
     else result = str;
     alert("result = " + result);
