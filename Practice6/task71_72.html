@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let sum = 0;
+    let arr = [12,15,20,25,59,79];
+    for (i in arr) {
+        sum+= arr[i]/arr.length;
+    }
+    alert("Ср. ариф = " + sum);
+    </script>
+
+    <script>
+        let n = 4;
+        function fac(n) {
+            if (n == 1) {
+                return 1;
+            }
+            return n * fac(n-1);
+        }
+        alert(fac(n));
+    </script>
+    
+</body>
+</html>

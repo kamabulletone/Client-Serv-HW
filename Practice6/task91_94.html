@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let str = "я учу javascript!";
+        alert("Кол-во символом = " + str.length);
+    </script>
+
+    <script>
+        let w1 = str.substr(2,3);
+        let w2 = str.substr(6,10);
+        alert("substr => " + w1 + " " + w2)
+        w1 = str.substring(2,5);
+        w2 = str.substring(6,str.length-1);
+        alert("substring => " + w1 + " " + w2)
+        w1 = str.slice(2,5);
+        w2 = str.slice(6,str.length-1);
+        alert("slice => " + w1 + " " + w2)
+    </script>
+
+    <script>
+        alert("position = " + str.search("учу"));
+    </script>
+    
+    <script>
+    let n = 5;
+    let result;
+    if (str.length > 5) {
+        result = str.substring(0,n);
+    }
+    else result = str;
+    alert("result = " + result);
+    </script>
+</body>
+</html>
