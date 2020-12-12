@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <textarea name="pole" id="tar" cols="30" rows="10">
+        some text
+    </textarea>
+    <button id="btn1">click me</button>
+    <img src="1.jpg" alt="" height=300px; width=400px;>
+    <button id="btn2">click me</button>
+
+
+    <script>
+        let btn1 = document.getElementById("btn1"),
+            content = document.getElementById("tar");
+            btn2 = document.getElementById("btn2")
+        let status1 = false;
+
+        btn1.addEventListener("click", function() {
+            content.textContent = Math.random().toString(36).substr(2, 5);
+        });
+
+        let status2 = false;
+        btn2.addEventListener("click", function() {
+            if (!status2) {
+                document.getElementsByTagName("img")[0].setAttribute("src", "2.jpeg");
+            status2 = true;
+            }
+            else {
+                document.getElementsByTagName("img")[0].setAttribute("src", "1.jpg");
+            status2 = false;
+            }
+            
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="timer1">
+        0
+    </div>
+    <input type="button" id="btn" value="Начать отсчет">
+    <br>
+    <br>
+    <script>
+        let d = document.querySelector(".timer1");
+        let btn = document.querySelector("#btn");
+        let timerI;
+        btn.addEventListener("click", function() {
+            timerI = setInterval(timer1,1000);
+        })
+        
+        function timer1() {
+            d.innerHTML++;
+        }
+    </script>
+
+    <div class="timer2">
+        0
+    </div>
+    <input type="button" id="btn1" value="Начать отсчет"> <input type="button" id="btn2" value="Остановить отсчет">
+    <script>
+        let d2 = document.querySelector(".timer2");
+        let btn1 = document.querySelector("#btn1");
+        let btn2 = document.querySelector("#btn2");
+        let timerID;
+        
+        btn1.addEventListener("click", function() {
+            timerID = setInterval(timer2,1000); 
+        })
+        btn2.addEventListener("click", function() {
+            clearInterval(timerID);
+        })
+        
+        
+        function timer2() {
+            d2.innerHTML++;
+        }
+    </script>
+<br>
+<br>
+    <div class="clock">
+        <span id="hours">00</span>:<span id="minutes">00</span>:<span id="second">00</span>
+        <input type="button" id="btnS"value="start"> <input type="button" id="btnC" value="stop">
+    </div>
+
+
+    <script>
+        let start = document.querySelector("#btnS");
+        let stop = document.querySelector("#btnC");
+        let clockID; 
+
+        start.addEventListener("click", function() {
+            clockID = setInterval(clock,1000);
+        });
+
+        stop.addEventListener("click", function() {
+            clearInterval(clockID);
+        });
+
+        function clock() {
+            let date = new Date();
+            document.querySelector("#hours").innerHTML = date.getHours();
+            document.querySelector("#minutes").innerHTML = date.getMinutes();
+            document.querySelector("#second").innerHTML = date.getSeconds();
+        }
+    </script>
+    <br><br>
+
+    <script>
+        let img = document.createElement("img");
+        img.setAttribute("src","pic1.jpg");
+        img.style.height = "300px";
+        img.style.width = "400px";
+        document.body.append(img);
+
+        changeImg();
+        setInterval(changeImg,10000);
+
+        function changeImg() {
+            setTimeout(function(){
+                img.src = "pic1.jpg";
+            },2500);
+            
+            setTimeout(function(){
+                img.src = "pic2.jpg"
+            },5000);
+           
+            setTimeout(function(){
+                img.src = "pic3.jpg"
+            },7500);
+           
+            setTimeout(function(){
+                img.src = "pic4.jpg"
+            },10000);
+          
+        }
+    </script>
+<br>
+<script>
+    let img1 = document.createElement("img");
+    img1.setAttribute("src","pic1.jpg");
+    img1.style.height = "300px";
+    img1.style.width = "400px";
+    let btnStart = document.createElement("input");
+    btnStart.value = "Начать";
+    btnStart.type = "button";
+    let btnStop= document.createElement("input");
+    btnStop.value = "Остановить";
+    btnStop.type = "button";
+    document.body.append(img1);
+    document.body.append(btnStart);
+    document.body.append(btnStop);
+    let imgStop; let i = 0;
+
+    btnStart.addEventListener("click", function() {
+        changeImg3();
+        imgStop = setInterval(changeImg3,2500);
+    })
+
+    btnStop.addEventListener("click", function() {
+        clearInterval(imgStop);
+    })
+    
+    let imgs = {
+        0 : "pic1.jpg",
+        1 : "pic2.jpg",
+        2 : "pic3.jpg",
+        3 : "pic4.jpg",
+        4 : "1.jpg"
+    }
+
+
+    function changeImg3() {
+        img1.src = imgs[(i%5)];
+        i++;
+    }
+
+</script>
+<br><br>
+<div class="clock1">
+    <span id="hours1">00</span>:<span id="minutes1">00</span>:<span id="second1">00</span>
+    <input type="button" id="btnS1"value="start"> <input type="button" id="btnC1" value="stop">
+</div>
+
+
+<script>
+    let start1 = document.querySelector("#btnS1");
+    let stop1 = document.querySelector("#btnC1");
+    let clockID1; 
+
+    start1.addEventListener("click", function() {
+        clockID1 = setInterval(clock1,1000);
+    });
+
+    stop1.addEventListener("click", function() {
+        clearInterval(clockID1);
+    });
+
+    function clock1() {
+        date = new Date();
+        document.querySelector("#hours1").innerHTML = 24 - date.getHours();
+        document.querySelector("#minutes1").innerHTML = 60 - date.getMinutes();
+        document.querySelector("#second1").innerHTML = 60 -date.getSeconds();
+    }
+</script>
+<br><br>
+    
+</body>
+</html>

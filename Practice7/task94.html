@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+        body {
+            height: 2500px;
+            width: 2500px;
+            overflow: scroll;
+        }
+        input {
+            position: fixed;
+        }
+    </style>
+    <div id="t">
+        <input type="button" id="btn" value="Нажми меня">
+    </div>
+    <script>
+        let btn = document.querySelector("#btn");
+
+        btn.addEventListener("click", () => {
+            alert("pageXOffset: " + window.pageXOffset + ", pageYOffset: " + window.pageYOffset)
+            window.scrollBy(0,300);
+            alert("pageXOffset: " + window.pageXOffset + ", pageYOffset: " + window.pageYOffset)
+        });
+    </script>
+</body>
+</html>

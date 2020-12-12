@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .linkWindow {
+        position: fixed;
+        border: 1px solid black;
+        left: calc(50% - 125px);
+        top: 20px;
+        width: 250px;
+        text-align: center;
+        padding: 10px;
+    }
+    .linkWindow input[type="button"]:nth-of-type(1){
+        margin-right: 20px;
+    }
+</style>
+<body>
+
+    <div id="contents">
+        
+    </div>
+    <script>
+        
+        let div = document.querySelector("#contents");
+        let linkElem;
+
+        for(let i = 1; i < 4; i++) {
+            let a = document.createElement("a");
+            a.href = "https://google.com";
+            a.style.display = "block";
+            a.innerHTML = "Ссылка " + i;
+            div.append(a);
+        }
+        
+        
+        document.onclick = function() {
+            
+            let target = event.target;
+            if (target.dataset.func == "go") {
+                let bruh = document.getElementsByClassName("linkWindow");
+                for (i of bruh) {
+                    i.remove();
+                }
+                document.location.href = "http://www.google.com";
+                return true;
+            }
+            else if (target.dataset.func == "stop") {
+                let bruh = document.getElementsByClassName("linkWindow");
+                for (i of bruh) {
+                    i.remove();
+                }
+                //perm.remove();
+            }
+            else if (target.nodeName == "A"){
+               var perm = document.createElement("div");
+                perm.className = "linkWindow";
+
+            let p = document.createElement("p");
+            p.append("Вы хотите перейти на данную страницу?");
+
+            p.insertAdjacentHTML("beforeend", "<br>" + target.getAttribute('href'))
+        
+            let btnY = document.createElement("input");
+            let btnN = document.createElement("input");
+            btnY.type = "button";
+            btnY.dataset.func = "go";
+            btnN.type = "button";
+            btnN.dataset.func = "stop";
+            btnY.value = "Перейти";
+            btnN.value = "Остаться";
+
+            perm.append(p,btnY,btnN);
+            document.body.prepend(perm);
+            }
+            else return false; 
+
+            return false;
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>Lorem ipsum dolor sit amet.</p>
+    <p>Lorem ipsum dolor sit amet.</p>
+    <p>Lorem ipsum dolor sit amet.</p>
+
+    <input type="button" id="btn" value="Нажми меня">
+    <script>
+        let p = document.getElementsByTagName("p");
+        let btn = document.querySelector("#btn");
+
+        btn.onclick = function() {
+            for(let i = 0; i < p.length-1; i++){
+            
+                p[i].innerHTML = Math.random().toString(36).substr(2, 5);
+            
+            }
+        }
+        
+    </script>
+
+    <p>Абзац с текстом</p>
+    <p>Абзац с текстом</p>
+    <p>Абзац с текстом</p>
+    <p>Абзац с текстом</p>
+    <p>Абзац с текстом</p>
+    <p>Абзац с текстом</p>
+    <p>Абзац с текстом</p>
+    <p>Абзац с текстом</p>
+    <input type="button" id="btn1" value="Нажмите на меня!">
+    <script>
+        let p1 = document.getElementsByTagName("p");
+        let btn1 = document.querySelector("#btn1");
+
+        btn1.onclick = () => {
+            for (let i = 3; p1.length; i++) {
+                
+                p1[i].innerHTML = i-3 + ". " + p1[i].innerHTML;
+            }
+            
+        }
+        
+    </script>
+
+</body>
+</html>

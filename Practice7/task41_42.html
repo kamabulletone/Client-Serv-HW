@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <textarea name="" id="ta" cols="30" rows="10"
+    onclick="this.innerHTML= Math.random().toString(36).substr(2, 5);
+    this.style.width = '150px';
+    this.style.color = 'red';
+    this.style.borderRadius = '10px';"
+    >some message</textarea>
+
+    <button id="hide" onclick="document.getElementById('ta').style.color = 'transparent';">hide</button>
+    <button id="show" onclick="document.getElementById('ta').style.color = 'black'">show</button>
+
+    <!-- <button id="hide" onclick="document.getElementById('ta').innerHTML = '';
+    document.getElementById('ta').setAttribute('data-orig', 'some message');">hide</button>
+    <button id="show" onclick="document.getElementById('ta').innerHTML = document.getElementById('ta').getAttribute('data-orig');">show</button> -->
+    <!-- <button id="show" onlclick="document.getElementById('ta').innerHTML = document.getElementById('ta').getAttribute('data-orig');">show</button> -->
+
+    
+    
+</body>
+</html>

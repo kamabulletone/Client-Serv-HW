@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+        #elem {
+            overflow: scroll;
+            height: 250px; 
+            width: 250px;
+        }
+        #content {
+            height: 800px;
+            width: 2000px;
+        }
+    </style>
+    <div id="elem">
+        <div id ="content">
+            Lorem ipsum dolor sit amet.
+        </div>
+    </div>
+    <input type="button" value="Нажми меня" id="btn">
+    <script>
+        let div = document.querySelector("#elem");
+        let btn = document.querySelector("#btn");
+                
+        btn.addEventListener("click", function() {
+            div.scrollTop = div.scrollHeight - 200 - div.clientHeight;
+            let counterT = div.scrollTop; 
+            alert("Вертикально: " +counterT + "px");
+        })
+    </script>
+</body>
+</html>

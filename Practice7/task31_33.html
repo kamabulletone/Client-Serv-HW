@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <textarea name="t" id="txt" cols="30" rows="10" data-swap="Another text">Some text</textarea>
+    <script>
+        let txt = document.querySelector("#txt");
+        txt.setAttribute("data-original", txt.innerHTML);
+        txt.addEventListener("focus", () => {
+            txt.innerHTML = txt.getAttribute("data-swap");
+        });
+        txt.addEventListener("blur", () => {
+            txt.innerHTML = txt.getAttribute("data-original");
+        });
+
+        
+    </script>
+
+<button id="btn1" onclick="this.setAttribute('disabled',true)">click1</button>
+<button id="btn2" onclick="document.getElementById('btn1').disabled = false;">click2</button>
+
+<button id="btnC" onclick="this.innerHTML++">0</button>
+
+</body>
+</html>

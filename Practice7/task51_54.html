@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body,html {
+        height: 100%;
+    }
+    .change {
+        font-size: 18px;
+        color:red;
+    }
+    .change span {
+        display: none;
+    }
+    .change::after {
+        content: "вы поменяли текст";
+    }
+    .input::after {
+        content:"";
+    }
+
+    div a {
+        display: block;
+        margin-bottom: 10px;
+    }
+</style>
+<body>
+    <p id="par"><span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum, voluptates.</span></p>
+    <input type="button" id="tb" value="Поменять текст">
+   
+    <script>
+        let p = document.querySelector("#par");
+        let pb = document.querySelector("#tb");
+
+        pb.onclick = function() {
+            p.classList.toggle("change");
+            p.classList.toggle("changespan");
+            p.classList.toggle("change::after");
+        };
+    </script>
+<br>
+<br>
+<br>
+<br>
+    <input type="text" id="num1"> + <input type="text" id="num2"> = <span id="result">0</span>
+    <br> <br>
+    <input type="button" id="btn" value="Нажмите, чтобы сложить">
+    <script>
+        let num1 = document.querySelector("#num1"), 
+        num2 = document.querySelector("#num2"),
+        res = document.querySelector("#result"),
+        btn = document.querySelector("#btn");
+
+        btn.onclick = function() {
+            let result = parseInt(num1.value,0) + parseInt(num2.value,0);
+            res.innerHTML = result
+        };
+    </script>
+<br>
+<br>
+<br>
+<br>
+    <input type="text" id="input" placeholder="Введи в меня текст!">
+    <p id="values"></p>
+    <script>
+        let input = document.querySelector("#input");
+        let content = document.querySelector("#values");
+
+        input.addEventListener("input", function(e) {
+            content.innerHTML = e.target.value;
+            content.style.display = "inline";
+        });
+    </script>
+<br>
+<br>
+<br>
+<br>
+<div>
+    <a href="http://google.com" id="google">ссылка1</a>
+    
+    <a href="http://tut.by" id="tut">ссылка2</a>
+    
+    <a href="https://yandex.ru" id="yandex">ссылка3</a>
+    <input type="button" id="btn1" value="Нажмите меня!">
+    <script>
+        let g = document.querySelector("#google");
+        let t = document.querySelector("#tut");
+        let y = document.querySelector("#yandex");
+        let btn1 = document.querySelector("#btn1");
+
+        btn1.onclick = function() {
+            g.innerHTML = g.innerHTML + " (http://google.com)";
+            t.innerHTML = t.innerHTML + " (http://tut.by)";
+            y.innerHTML = y.innerHTML + " (https://yandex.ru)";
+            this.style.border = "2px solid black";
+        }
+
+
+    </script>
+</div>
+    
+
+</body>
+</html>
